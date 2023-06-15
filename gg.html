@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .button {
+        /* Default CSS */
+        background-color: blue;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .button.clicked {
+        /* CSS when button is clicked */
+        background-color: red;
+        color: black;
+        /* Add any other styles you want to apply */
+      }
+    </style>
+  </head>
+  <body>
+    <a id="myButton" class="button">ADD</a>
+
+    <script>
+      var myButton = document.getElementById('myButton');
+
+      myButton.addEventListener('click', function () {
+        event.preventDefault();
+        myButton.classList.toggle('clicked');
+        if(myButton.innerHTML=='ADD'){
+          myButton.innerHTML='DELETE';
+        }else{
+          myButton.innerHTML='ADD';
+        }
+      });
+    </script>
+  </body>
+</html>
